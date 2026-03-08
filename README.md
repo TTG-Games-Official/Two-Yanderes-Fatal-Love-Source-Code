@@ -2,7 +2,7 @@
 
 Welcome to the source code repository for the original visual novel **"Two Yanderes & Fatal Love"**.
 
-This repository contains the underlying Python and Ren'Py code ('.rpy' files) used to build the game's systems, user interface, and mechanics. **Please note that this repository DOES NOT include the game's story scripts, character art, backgrounds, audio files, or any other visual/audio assets.** It is purely the mechanical framework of the game.
+This repository contains the underlying Python and Ren'Py code ('.rpy' files) used to build the game's systems, user interface, and mechanics. **Please note that this repository DOES NOT include the game's story scripts, easter eggs, character art, backgrounds, audio files, or any other visual/audio assets.** It is purely the mechanical framework of the game.
 
 ## **⚠️ MASSIVE SPOILER WARNING**
 

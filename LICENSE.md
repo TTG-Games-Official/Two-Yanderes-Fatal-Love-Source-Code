@@ -6,7 +6,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 **1\. EDUCATIONAL AND ADAPTIVE USE ALLOWED:** You may study the Code for learning purposes. You may extract, adapt, and implement specific mechanical systems (such as UI elements, variable trackers, or custom screens) into your own original projects, including commercial games.
 
-**2\. NO DIRECT CLONING:** You may not use this Code to recreate, clone, or publish a direct copy (or a substantially similar version) of the game "Two Yanderes \\\& Fatal Love". Your project must be a distinct, original work.
+**2\. NO DIRECT CLONING:** You may not use this Code to recreate, clone, or publish a direct copy (or a substantially similar version) of the game "Two Yanderes & Fatal Love". Your project must be a distinct, original work.
 
 **3\. NO RESELLING AS ASSETS:** You may not package, distribute, or sell this Code (either in its original form or modified) as a standalone "ready-made asset", "code template", "plugin", or "framework" on any digital storefront or marketplace. The Code can only be monetized as an integrated part of a complete, original game.
 

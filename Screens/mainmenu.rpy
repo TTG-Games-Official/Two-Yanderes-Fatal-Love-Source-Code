@@ -4,11 +4,11 @@ screen main_menu():
 
     if persistent.yandere_menu_enabled == True:
         add "backgrounds/Uncle Mugen/Front School Scary.webp"
-        add Animation(im.Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/knife.webp", (0, 0), "characters/akira/small_eyes.webp", (0, 0), "characters/akira/forehead_dark_open_eyes.webp", (0, 0), "characters/akira/expressions/open_mouth/happy.webp"), 3.0, im.Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/knife.webp", (0, 0), "characters/akira/eyelashes_sad.webp", (0, 0), "characters/akira/forehead_dark_closed_eyes.webp", (0, 0), "characters/akira/expressions/open_mouth/happy.webp"), 0.1) at akira_menu()
+        add Animation(Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/knife.webp", (0, 0), "characters/akira/small_eyes.webp", (0, 0), "characters/akira/forehead_dark_open_eyes.webp", (0, 0), "characters/akira/expressions/open_mouth/happy.webp"), 3.0, Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/knife.webp", (0, 0), "characters/akira/eyelashes_sad.webp", (0, 0), "characters/akira/forehead_dark_closed_eyes.webp", (0, 0), "characters/akira/expressions/open_mouth/happy.webp"), 0.1) at akira_menu()
 
     else:
         add "backgrounds/Uncle Mugen/Front School.webp"
-        add Animation(im.Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/normal_eyes.webp", (0, 0), "characters/akira/expressions/closed_mouth/happy.webp"), 3.0, im.Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/eyelashes_sad.webp", (0, 0), "characters/akira/expressions/closed_mouth/happy.webp"), 0.1) at akira_menu()
+        add Animation(Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/normal_eyes.webp", (0, 0), "characters/akira/expressions/closed_mouth/happy.webp"), 3.0, Composite((1797, 3992), (0, 0), "characters/akira/body.webp", (0, 0), "characters/akira/eyelashes_sad.webp", (0, 0), "characters/akira/expressions/closed_mouth/happy.webp"), 0.1) at akira_menu()
 
     add "mainmenu/menugamelogo.webp"
 

@@ -145,6 +145,20 @@ label splashscreen:
                 $ persistent.chapter11enabled = False
                 $ persistent.chapter12enabled = False
 
+                $ persistent.ch1_text_seen = False
+                $ persistent.ch2_text_seen = False
+                $ persistent.ch3_text_seen = False
+                $ persistent.ch4_text_seen = False
+                $ persistent.ch5_text_seen = False
+                $ persistent.ch6_text_seen = False
+                $ persistent.ch7_text_seen = False
+                $ persistent.ch8_text_seen = False
+                $ persistent.ch9_text_seen = False
+                $ persistent.ch10_text_seen = False
+                $ persistent.ch11_text_seen_1 = False
+                $ persistent.ch11_text_seen_2 = False
+                $ persistent.ch12_text_seen = False
+                
                 $ persistent.save_destroy_completely = None
                 $ persistent.save_police_suspect = None
                 $ persistent.save_cat_akira_approved = None

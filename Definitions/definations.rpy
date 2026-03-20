@@ -109,6 +109,19 @@ default persistent.chapter10enabled = False
 default persistent.chapter11enabled = False
 default persistent.chapter12enabled = False
 
+default persistent.ch1_text_seen = False
+default persistent.ch2_text_seen = False
+default persistent.ch3_text_seen = False
+default persistent.ch4_text_seen = False
+default persistent.ch5_text_seen = False
+default persistent.ch6_text_seen = False
+default persistent.ch7_text_seen = False
+default persistent.ch8_text_seen = False
+default persistent.ch9_text_seen = False
+default persistent.ch10_text_seen = False
+default persistent.ch11_text_seen_1 = False
+default persistent.ch11_text_seen_2 = False
+default persistent.ch12_text_seen = False
 
 define ffff = Dissolve(0.2)
 define fff_ = Dissolve(0.5)
@@ -131,9 +144,9 @@ define config.has_voice = False
 
 define config.name = _("Two Yanderes & Fatal Love")
 define gui.show_name = False
-define config.version = "3.1.1"
+define config.version = "3.1.4"
 
-define config.image_cache_size_mb = 1024
+define config.image_cache_size_mb = 512
 define config.gl2 = True
 
 define build.name = "TYFL"

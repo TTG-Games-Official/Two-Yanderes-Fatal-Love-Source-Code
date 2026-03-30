@@ -119,6 +119,10 @@ define yboy_laugh_echo = "audio/sfx/TTG Games/Yandere Boy Laugh Echo.opus"
 # Pixabay
 define ygirl_laugh = "audio/sfx/Pixabay/Yandere Girl Laugh.opus"
 define ygirl_laugh_echo = "audio/sfx/Pixabay/Yandere Girl Laugh Echo.opus"
+
+define ygirl2_laugh = "audio/sfx/Pixabay/Yandere Girl Laugh 2.opus"
+define ygirl2_laugh_echo = "audio/sfx/Pixabay/Yandere Girl Laugh 2 Echo.opus"
+
 define giggle = "audio/sfx/Pixabay/Girl Giggle.opus"
 
 define paper =  "audio/sfx/Pixabay/Paper.opus"

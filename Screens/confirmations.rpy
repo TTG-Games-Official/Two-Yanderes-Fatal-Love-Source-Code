@@ -188,9 +188,9 @@ screen name_input(message, ok_action):
                     key "K_KP_ENTER" action NullAction()
                     key "K_RETURN" action NullAction()
                 else:
-                    textbutton _("OK") action [Function(play_click_sound), Hide("name_input"), ok_action, SetVariable("persistent.playernameentered", True)]
-                    key "K_KP_ENTER" action [Function(play_click_sound), Hide("name_input"), ok_action, SetVariable("persistent.playernameentered", True)]
-                    key "K_RETURN" action [Function(play_click_sound), Hide("name_input"), ok_action, SetVariable("persistent.playernameentered", True)]
+                    textbutton _("OK") action [Function(play_click_sound), Show("change_gender"), Hide("name_input"), ok_action, SetVariable("persistent.playernameentered", True)]
+                    key "K_KP_ENTER" action [Function(play_click_sound), Show("change_gender"), Hide("name_input"), ok_action, SetVariable("persistent.playernameentered", True)]
+                    key "K_RETURN" action [Function(play_click_sound), Show("change_gender"), Hide("name_input"), ok_action, SetVariable("persistent.playernameentered", True)]
 
                 textbutton _("CANCEL") action [Function(play_click_sound), Hide("name_input"), Function(cancel_name_input)]
                 key "K_ESCAPE" action [Hide("name_input"), Function(cancel_name_input)]
@@ -229,12 +229,40 @@ screen change_name():
                     key "K_KP_ENTER" action NullAction()
                     key "K_RETURN" action NullAction()
                 else:
-                    textbutton _("OK") action [Function(play_click_sound), Hide("change_name"), SetVariable("persistent.playernameentered", True)]
-                    key "K_KP_ENTER" action [Function(play_click_sound), Hide("change_name"), SetVariable("persistent.playernameentered", True)]
-                    key "K_RETURN" action [Function(play_click_sound), Hide("change_name"), SetVariable("persistent.playernameentered", True)]
+                    textbutton _("OK") action [Function(play_click_sound), Hide("change_name"), Show("change_gender"), SetVariable("persistent.playernameentered", True)]
+                    key "K_KP_ENTER" action [Function(play_click_sound), Hide("change_name"), Show("change_gender"), SetVariable("persistent.playernameentered", True)]
+                    key "K_RETURN" action [Function(play_click_sound), Hide("change_name"), Show("change_gender"), SetVariable("persistent.playernameentered", True)]
 
             if persistent.playername.lower() in forbidden_names:
                 text _("{color=#ff6a00}{color=#ff6a00}This name is already used by an in-game character.\nChoosing it may cause confusion during the story.")
+
+
+screen change_gender():
+    modal True
+    zorder 200
+    style_prefix "confirm"
+
+    add "gui/overlay/confirm.png"
+
+    frame:
+
+        vbox:
+            
+            xalign 0.5
+            yalign 0.5
+            spacing 45
+
+            label _("Please choose your gender.\nThis will only change the pronouns in the story."):
+                    style "confirm_prompt"
+                    xalign 0.5
+
+            hbox:
+                style "confirm_prompt"
+                xalign 0.5
+                spacing 200
+
+                textbutton _("MALE") action [Function(play_click_sound), Hide("change_gender"), Function(gender_male)]
+                textbutton _("FEMALE") action [Function(play_click_sound), Hide("change_gender"), Function(gender_female)]
 
 
 screen change_name_error():

@@ -87,6 +87,13 @@ default persistent.playername = ""
 default persistent.show_sanity = "dynamic"
 default persistent.language = "English"
 
+default persistent.him_her = "him"
+default persistent.his_her = "his"
+default persistent.gender = "boy"
+default persistent.he_she = "he"
+default persistent.He_She = "He"
+default persistent.çocuk_kız = "çocuk"
+
 default persistent.music_volume = 0.5
 default persistent.sfx_volume = 0.5
 default persistent.voice_volume = 0.5
@@ -144,7 +151,7 @@ define config.has_voice = False
 
 define config.name = _("Two Yanderes & Fatal Love")
 define gui.show_name = False
-define config.version = "3.1.4"
+define config.version = "3.1.5"
 
 define config.image_cache_size_mb = 512
 define config.gl2 = True

@@ -167,6 +167,13 @@ screen general_settings():
                 else:    
                     text _("{color=#ffbf00}{size=-10}Current Name: [persistent.playername]")
 
+                if persistent.gender == "boy":
+                    text _("{color=#ffbf00}{size=-10}Current Gender: Male")
+                elif persistent.gender == "girl":    
+                    text _("{color=#ffbf00}{size=-10}Current Gender: Female")
+                else:
+                    text _("{color=#ffbf00}{size=-10}Current Gender: N/A")
+
                 if main_menu:
                     textbutton _("Change") action [Function(play_click_sound), Show("change_name")]
                 else:

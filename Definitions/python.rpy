@@ -238,6 +238,21 @@ init python:
         renpy.music.stop(channel="msanity", fadeout=fadeout)
         renpy.music.stop(channel="lsanity", fadeout=fadeout)
 
+    def gender_male():
+        persistent.him_her = "him"
+        persistent.his_her = "his"
+        persistent.gender = "boy"
+        persistent.he_she = "he"
+        persistent.He_She = "He"
+        persistent.çocuk_kız = "çocuk"
+
+    def gender_female():
+        persistent.him_her = "her"
+        persistent.his_her = "her"
+        persistent.gender = "girl"
+        persistent.he_she = "she"
+        persistent.He_She = "She"
+        persistent.çocuk_kız = "kız"
 
 init python:
     # These python functions checks if the game is running for the first time by creating and checking the "firstrun" file.

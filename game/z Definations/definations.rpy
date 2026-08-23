@@ -100,18 +100,7 @@ default rejected_crime = False
 default akira_cat = False
 default yelled_akira = False
 default amusement_p = False
-
-default tool = ""
-
-default eşya = ""
-default eşyayı = ""
-
-default herramienta = ""
-default herramienta_indef = ""
-
-default инструмент = ""
-default инструмент_вин = ""
-default инструмент_тв = ""
+default girl_to_frame = "main"
 
 # Story General
 default random_number = None
@@ -170,8 +159,6 @@ default cat_akira_approved = None
 default caught = None
 default counselor_answer = None
 default suspended = None
-
-default persistent.akira_4th_wall_splash_type = None
 
 # Achievements
 default persistent.game_finished_once = False
@@ -234,7 +221,7 @@ define config.has_voice = False
 
 define config.name = _("Two Yanderes & Fatal Love")
 define gui.show_name = False
-define config.version = "3.4.1"
+define config.version = "3.4.2"
 
 define config.image_cache_size_mb = 512
 define config.gl2 = True

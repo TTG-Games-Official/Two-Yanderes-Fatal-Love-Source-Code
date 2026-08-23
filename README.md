@@ -8,7 +8,7 @@ This repository contains the underlying Python and Ren'Py code ('.rpy' files) us
 
 **DO NOT READ THIS CODE IF YOU PLAN TO PLAY THE GAME.**
 
-Because this repository contains the logic that drives the game, reading these files could spoil the experience for you. The code explicitly reveals how exactly the systems work behind the scenes and what things you might encounter through the game.
+Because this repository contains the logic that drives the game and the easter eggs, reading these files could spoil the experience for you. The code explicitly reveals how exactly the systems work behind the scenes and what things you might encounter through the game.
 
 If you are a player, please turn back now!
 

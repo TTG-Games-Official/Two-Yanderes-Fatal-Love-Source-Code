@@ -552,7 +552,7 @@ screen broken_text3():
     key "K_RETURN" action [Function(play_click_sound), Hide("broken_text3")]
     key "K_ESCAPE" action Hide("broken_text3")
 
-screen cheats():
+screen cheats1():
 
     modal True
     zorder 200
@@ -627,9 +627,75 @@ screen cheats():
                         bar value VariableValue("persistent.locked_atmosphere_percentage", min=0, max=100, step=1, force_step=True) style "custom_bar"
                         text _("[persistent.locked_atmosphere_percentage]%") ypos -7 xpos 8
 
-            text _("Cheats are automatically turned off when you restart the game.") xalign 0.5
+            text _("{size=-5}Cheats are automatically turned off when you restart the game.\nEnabling these cheats will not prevent you from getting new achievements.") xalign 0.5
 
-            textbutton _("Close") action [Function(play_click_sound), Hide("cheats")] xalign 0.5
+            hbox:
 
-    key "K_RETURN" action [Function(play_click_sound), Hide("cheats")]
-    key "K_ESCAPE" action Hide("cheats")
+                xalign 0.5
+                spacing 75
+
+                textbutton _("Close") action [Function(play_click_sound), Hide("cheats1")] xalign 0.5
+                textbutton _("Next Page >") action [Function(play_click_sound), Hide("cheats1"), Show("cheats2")] xalign 0.5
+
+    key "K_RETURN" action [Function(play_click_sound), Hide("cheats1")]
+    key "K_ESCAPE" action Hide("cheats1")
+
+screen cheats2():
+
+    modal True
+    zorder 200
+    style_prefix "confirm"
+
+    add "gui/overlay/confirm.png"
+
+    frame:
+
+        vbox:
+
+            spacing 80
+            xalign 0.5
+            yalign 0.5
+
+            hbox:
+
+                spacing 25
+                xalign 0.5
+                yalign 0.5
+
+                vbox:
+
+                    label _("Lock Police Suspicion Level:")
+                    
+                    vbox:
+                        style_prefix "radio"
+                        textbutton _("Enable") action [Function(play_click_sound), SetVariable("persistent.lock_suspicion_level", True)]
+                        textbutton _("Disable") action [Function(play_click_sound), SetVariable("persistent.lock_suspicion_level", False)]
+
+            vbox:
+
+                spacing 15
+                xalign 0.5
+                yalign 0.5
+
+                vbox:
+
+                    spacing 5
+
+                    label _("Locked Police Suspicion Percentage:")
+
+                    hbox:
+                        bar value VariableValue("persistent.locked_suspicion_percentage", min=0, max=100, step=1, force_step=True) style "custom_bar"
+                        text _("[persistent.locked_suspicion_percentage]%") ypos -7 xpos 8
+
+            text _("{size=-5}Cheats are automatically turned off when you restart the game.\n{color=#ff0000}Enabling these cheats will prevent you from unlocking certain achievements.") xalign 0.5
+
+            hbox:
+
+                xalign 0.5
+                spacing 75
+                
+                textbutton _("< Previous Page") action [Function(play_click_sound), Hide("cheats2"), Show("cheats1")] xalign 0.5
+                textbutton _("Close") action [Function(play_click_sound), Hide("cheats2")] xalign 0.5
+
+    key "K_RETURN" action [Function(play_click_sound), Hide("cheats2")]
+    key "K_ESCAPE" action Hide("cheats2")

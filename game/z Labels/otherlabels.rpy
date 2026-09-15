@@ -56,9 +56,9 @@ label before_main_menu:
         hide white onlayer color with ff__
 
         if persistent.return_main_menu_counter == 5:
-            $ renpy.pause(4.5, hard=True)
+            $ renpy.pause(4.5, hard=False)
         else:
-            $ renpy.pause(0.5, hard=True)
+            $ renpy.pause(0.5, hard=False)
 
         $ persistent.go_main_menu = False
 

@@ -13,6 +13,7 @@ label splashscreen:
     $ persistent.lock_sanity_level = False
     $ persistent.lock_atmosphere_level = False
     $ persistent.enable_atmosphere_outside_school = False
+    $ persistent.lock_suspicion_level = False
 
     if persistent.playername == "":
         $ persistent.playernameentered = False
@@ -37,7 +38,7 @@ label splashscreen:
     if not persistent.entry_seen:
 
         scene previous_save with ff__
-        $ renpy.pause(1.0, hard=True)
+        $ renpy.pause(1.0, hard=False)
         window show
 
         $ lock_dismiss()
@@ -67,7 +68,7 @@ label splashscreen:
 
                 window hide
                 show black with ff__
-                $ renpy.pause(2.0, hard=True)
+                $ renpy.pause(2.0, hard=False)
                 pass
 
 
@@ -199,7 +200,7 @@ label splashscreen:
 
             "No, continue where I left off.":
 
-                $ renpy.pause(0.5, hard=True)
+                $ renpy.pause(0.5, hard=False)
                 $ create_firstrun()
 
                 jump entry
@@ -245,7 +246,7 @@ label entry:
         show a at hs()
 
         $ persistent.akira_ignored = False
-        $ renpy.pause(0.5, hard=True)
+        $ renpy.pause(0.5, hard=False)
 
         pass
 
@@ -281,7 +282,7 @@ label entry:
     scene night
     show logos with fff_
 
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.0, hard=True)
 
     hide logos with fff_
 

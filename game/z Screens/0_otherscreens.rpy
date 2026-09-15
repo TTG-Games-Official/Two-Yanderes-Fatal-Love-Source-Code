@@ -249,7 +249,7 @@ screen atm_percent():
 
 screen rickroll():
 
-    if not "rickrolled" in persistent.unlocked_achievement_ids:   
+    if not "rickrolled" in persistent.unlocked_achievement_ids and is_getting_achievement_allowed("rickrolled"):
 
         $ get_achievement("rickrolled")
 

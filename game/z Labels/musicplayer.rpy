@@ -10,7 +10,7 @@ init python:
 
 label play_ost_track(screen_name, music_name, background_name, black_alpha, character_name, show_vignette=False):
 
-    $ renpy.pause(0.5, hard=True)
+    $ renpy.pause(0.5, hard=False)
 
     if black_alpha is None:
         $ renpy.show("black")
@@ -24,7 +24,7 @@ label play_ost_track(screen_name, music_name, background_name, black_alpha, char
 
     $ renpy.show("menulogo", at_list=[zoom(1.4)])
     $ renpy.show(character_name, at_list=[akira_ost])
-    $ renpy.pause(0.5, hard=True)
+    $ renpy.pause(0.5, hard=False)
     $ renpy.show_screen(screen_name)
     $ renpy.music.play(music_name, channel="music")
 
@@ -51,7 +51,7 @@ label ost:
 
         "Evening Glow":
 
-            $ renpy.pause(0.1, hard=True)
+            $ renpy.pause(0.1, hard=False)
 
             menu:
 
@@ -83,12 +83,12 @@ label ost:
                     call play_ost_track("osttext27", evening_glow_l_l, "ostbg_yandere", None, "a b bk y se om angry", True)
                 
                 "<<< | Go Back To Music List":
-                    $ renpy.pause(0.1, hard=True)
+                    $ renpy.pause(0.1, hard=False)
                     jump ost
 
         "Schoolday":
 
-            $ renpy.pause(0.1, hard=True)
+            $ renpy.pause(0.1, hard=False)
 
             menu:
 
@@ -120,12 +120,12 @@ label ost:
                     call play_ost_track("osttext15", schoolday_l_l, "ostbg_yandere", None, "a b bk y se om angry", True)
 
                 "<<< | Go Back To Music List":
-                    $ renpy.pause(0.1, hard=True)
+                    $ renpy.pause(0.1, hard=False)
                     jump ost
 
         "Echoes of Love":
 
-            $ renpy.pause(0.1, hard=True)
+            $ renpy.pause(0.1, hard=False)
 
             menu:
 
@@ -148,7 +148,7 @@ label ost:
                     call play_ost_track("osttext21", echoesoflove_l_l, "ostbg_yandere", None, "a b bk y se om angry", True)
 
                 "<<< | Go Back To Music List":
-                    $ renpy.pause(0.1, hard=True)
+                    $ renpy.pause(0.1, hard=False)
                     jump ost
 
         "(?) Some Tracks Are Missing?":
@@ -166,7 +166,7 @@ label ost:
             jump ost
 
         "<<< | Go To Main Menu":
-            $ renpy.pause(0.3, hard=True)
+            $ renpy.pause(0.3, hard=False)
             jump go_to_main_menu
 
 
@@ -180,12 +180,12 @@ label waiting:
 
             $ hide_ost_text_screens()
 
-            $ renpy.pause(0.3, hard=True)
+            $ renpy.pause(0.3, hard=False)
 
             jump ost
 
         "Go To Main Menu":
-            $ renpy.pause(0.3, hard=True)
+            $ renpy.pause(0.3, hard=False)
             jump go_to_main_menu
 
         "Nevermind":

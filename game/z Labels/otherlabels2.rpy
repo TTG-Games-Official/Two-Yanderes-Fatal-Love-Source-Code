@@ -16,7 +16,7 @@ label easter_egg_trigger:
 
     $ get_achievement("this_is_her_game")
 
-    $ renpy.pause(1, hard=True)
+    $ renpy.pause(1.0, hard=True)
     $ play_ygirl_laugh_sound()
     $ persistent.yandere_menu_enabled = "easteregg"
     $ persistent.reset_easteregg_after_reload = False
@@ -32,6 +32,10 @@ label after_load:
     if persistent.lock_sanity_level:
         $ set_sanity(persistent.locked_sanity_percentage)
 
+    if persistent.lock_suspicion_level:
+        $ suspicion = persistent.locked_suspicion_percentage 
+        $ suspicion_achievements_blocked_for_playthrough = True
+    
     if persistent.enable_atmosphere_outside_school:
         $ enable_atm(True)
 

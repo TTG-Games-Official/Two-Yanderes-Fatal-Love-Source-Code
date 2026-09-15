@@ -33,7 +33,7 @@ screen main_menu():
         else:
 
             if persistent.game_finished_once:
-                textbutton _("Cheats") action [Function(play_click_sound), Show("cheats")] xalign 0.98 yalign 0.86
+                textbutton _("Cheats") action [Function(play_click_sound), Show("cheats1")] xalign 0.98 yalign 0.86
             
             textbutton _("Privacy Policy") action OpenURL("https://sites.google.com/view/privacy-policy-tyfl/home") xalign 0.98 yalign 0.92
             textbutton _("Terms of Use") action OpenURL("https://sites.google.com/view/terms-of-use-tyfl/home") xalign 0.98 yalign 0.98

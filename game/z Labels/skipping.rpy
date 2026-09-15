@@ -361,7 +361,7 @@ label continue_story:
     show black2 onlayer askip zorder 15 with ff__
     hide a onlayer askip
 
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0, hard=False)
 
     $ persistent.tried_skip = True
     $ monitor_skip_call_active = False

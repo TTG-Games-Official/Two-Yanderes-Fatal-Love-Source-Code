@@ -107,11 +107,16 @@ default random_number = None
 default chapter = None
 
 # Cheats
+default suspicion_achievements_blocked_for_playthrough = False
+
 default persistent.lock_sanity_level = False
 default persistent.lock_atmosphere_level = False
 default persistent.enable_atmosphere_outside_school = False
+default persistent.lock_suspicion_level = False
+
 default persistent.locked_sanity_percentage = 100
 default persistent.locked_atmosphere_percentage = 100
+default persistent.locked_suspicion_percentage = 0
 
 # Chapter Unlocks
 default persistent.selected_chapter = None
@@ -221,7 +226,7 @@ define config.has_voice = False
 
 define config.name = _("Two Yanderes & Fatal Love")
 define gui.show_name = False
-define config.version = "3.4.2"
+define config.version = "3.4.3"
 
 define config.image_cache_size_mb = 512
 define config.gl2 = True

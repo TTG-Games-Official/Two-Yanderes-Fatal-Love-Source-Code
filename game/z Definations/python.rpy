@@ -335,6 +335,7 @@ init python:
 init python:
 
     global sanity
+    global suspicion_achievements_blocked_for_playthrough
     current_name = ""
 
     def start_game_with_fade():
@@ -399,6 +400,23 @@ init python:
             else:
                 return "normal"
     
+    def is_getting_achievement_allowed(achievement_id):
+
+        if persistent.lock_suspicion_level or suspicion_achievements_blocked_for_playthrough:
+
+            if achievement_id in (
+                "wrong_love_story",
+                "just_a_student",
+                "perfect_innocence",
+                "cuffed_and_loved",
+                "abnormal_panic",
+            ):
+                return False
+            
+            return True
+
+        return True
+
     def trigger_easter_egg():
         renpy.jump("easter_egg_trigger")
 
@@ -601,6 +619,9 @@ init python:
             )
 
     def get_achievement(achievement_id, show_notification=True):
+
+        if not is_getting_achievement_allowed(achievement_id):
+            return
 
         achievement = _achievement_data_by_id().get(achievement_id)
 
@@ -900,7 +921,7 @@ init python:
 
                         renpy.show("yandereblack", layer="yblack", at_list=[transparent(1.0 - (sanity / 100))])
 
-                        renpy.pause(0.0, hard=True) # 0 seconds is one framerate waiting. It prevents the variable from reaching the target value instantly.
+                        renpy.pause(0.0, hard=False) # 0 seconds is one framerate waiting. It prevents the variable from reaching the target value instantly.
 
             else:
 
@@ -928,7 +949,7 @@ init python:
 
                         renpy.show("yandereblack", layer="yblack", at_list=[transparent(1.0 - (sanity / 100))])
 
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
         elif prefix == "-":
 
@@ -958,7 +979,7 @@ init python:
 
                         renpy.show("yandereblack", layer="yblack", at_list=[transparent(1.0 - (sanity / 100))])
 
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
             else:
 
@@ -986,7 +1007,7 @@ init python:
 
                         renpy.show("yandereblack", layer="yblack", at_list=[transparent(1.0 - (sanity / 100))])
 
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
 
     def set_sanity(value): # This function directly sets the sanity percentage to the given value (you can't use negative values).
@@ -1040,7 +1061,7 @@ init python:
 
                     if atmosphere < 100:
                         atmosphere += 1
-                        renpy.pause(0.0, hard=True) # 0 seconds is one framerate waiting. It prevents the variable from reaching the target value instantly.
+                        renpy.pause(0.0, hard=False) # 0 seconds is one framerate waiting. It prevents the variable from reaching the target value instantly.
 
             else:
 
@@ -1048,7 +1069,7 @@ init python:
 
                     if atmosphere < 96:
                         atmosphere += 5
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
 
         elif prefix == "-":
@@ -1059,7 +1080,7 @@ init python:
 
                     if atmosphere > 0:
                         atmosphere -= 1
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
             else:
 
@@ -1067,7 +1088,7 @@ init python:
 
                     if atmosphere > 4:
                         atmosphere -= 5
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
         atmosphere_visual_updating = False
         refresh_atmosphere_visuals()
@@ -1163,6 +1184,10 @@ init python:
 
         global suspicion
 
+        if persistent.lock_suspicion_level:
+            suspicion = persistent.locked_suspicion_percentage 
+            return
+
         if prefix == "+":
 
             if persistent.low_fps_optimization == False:
@@ -1171,7 +1196,7 @@ init python:
 
                     if suspicion < 100:
                         suspicion += 1
-                        renpy.pause(0.0, hard=True) # 0 seconds is one framerate waiting. It prevents the variable from reaching the target value instantly.
+                        renpy.pause(0.0, hard=False) # 0 seconds is one framerate waiting. It prevents the variable from reaching the target value instantly.
 
             else:
 
@@ -1179,7 +1204,7 @@ init python:
 
                     if suspicion < 96:
                         suspicion += 5
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
 
         elif prefix == "-":
@@ -1190,7 +1215,7 @@ init python:
 
                     if suspicion > 0:
                         suspicion -= 1
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
             else:
 
@@ -1198,7 +1223,7 @@ init python:
 
                     if suspicion > 4:
                         suspicion -= 5
-                        renpy.pause(0.0, hard=True)
+                        renpy.pause(0.0, hard=False)
 
         else:
             pass
